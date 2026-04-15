@@ -954,3 +954,9 @@ img {
         grid-template-columns: 1fr;
     }
 }
+
+/* React: garantir visibilidade */
+.timeline-item, .skill-card, .projeto-card, [data-animate] {
+    opacity: 1 !important;
+    transform: none !important;
+}
