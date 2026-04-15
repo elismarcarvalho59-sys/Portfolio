@@ -884,3 +884,73 @@ img {
         font-size: 0.8rem;
     }
 }
+
+/* === Projetos === */
+.projetos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.projeto-card {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.projeto-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.projeto-card .sobre-icon {
+    margin-bottom: 1.2rem;
+}
+
+.projeto-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--royal-blue-dark);
+    margin-bottom: 0.6rem;
+}
+
+.projeto-card p {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.projeto-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    justify-content: center;
+}
+
+.projeto-tag {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--royal-blue);
+    background: rgba(26, 35, 126, 0.08);
+    padding: 0.3rem 0.7rem;
+    border-radius: 20px;
+}
+
+@media (max-width: 968px) {
+    .projetos-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .projetos-grid {
+        grid-template-columns: 1fr;
+    }
+}
