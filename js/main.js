@@ -109,3 +109,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// --- Renderização dinâmica de Projetos ---
+const projetos = [
+    { id: 1, titulo: 'Projeto Acadêmico', descricao: 'Trabalho em grupo desenvolvido durante o curso, com foco em pesquisa, organização e apresentação de resultados.', tags: ['Pesquisa', 'Grupo', 'Apresentação'], icon: 'fas fa-book' },
+    { id: 2, titulo: 'Ação Voluntária', descricao: 'Participação em iniciativas comunitárias, aplicando empatia e senso de responsabilidade social em ações concretas.', tags: ['Voluntariado', 'Social', 'Empatia'], icon: 'fas fa-hands-helping' },
+    { id: 3, titulo: 'Capacitação Contínua', descricao: 'Participação em cursos e eventos que contribuíram para o desenvolvimento de novas competências.', tags: ['Aprendizado', 'Crescimento', 'Evolução'], icon: 'fas fa-graduation-cap' },
+];
+
+document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('projetosContainer');
+    if (!container) return;
+    projetos.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'projeto-card glass-card';
+        card.setAttribute('data-animate', '');
+        card.innerHTML = `
+            <div class="projeto-icon"><i class="${p.icon}"></i></div>
+            <h3 class="projeto-titulo">${p.titulo}</h3>
+            <p class="projeto-descricao">${p.descricao}</p>
+            <div class="projeto-tags">${p.tags.map(t => `<span class="projeto-tag">${t}</span>`).join('')}</div>
+        `;
+        container.appendChild(card);
+    });
+});
